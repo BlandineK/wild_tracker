@@ -40,12 +40,12 @@ public class EndangeredAnimal extends Animal {
         try (Connection con = DB.sql2o.open()) {
             String sql = "INSERT INTO animals (name, health, age, endangered) VALUES (:name, :health, :age, :endangered)";
             con.createQuery(sql)
-//                    .addParameter("health", this.health)
-//                    .addParameter("age", this.age)
-//                    .addParameter("id", this.id)
-//                    .addParameter("endangered", this.endangered)
-//                    .executeUpdate();
-//        }
+                    .addParameter("health", this.health)
+                    .addParameter("age", this.age)
+                    .addParameter("id", this.id)
+                    .addParameter("endangered", this.endangered)
+                    .executeUpdate();
+        }
     }
 
     public static List<EndangeredAnimal> all() {
