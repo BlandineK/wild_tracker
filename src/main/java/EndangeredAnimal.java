@@ -38,7 +38,7 @@ public class EndangeredAnimal extends Animal {
 
     public void save() {
         try (Connection con = DB.sql2o.open()) {
-//            String sql = "INSERT INTO animals (name, health, age, endangered) VALUES (:name, :health, :age, :endangered)";
+            String sql = "INSERT INTO animals (name, health, age, endangered) VALUES (:name, :health, :age, :endangered)";
             con.createQuery(sql)
                     .addParameter("health", this.health)
                     .addParameter("age", this.age)
