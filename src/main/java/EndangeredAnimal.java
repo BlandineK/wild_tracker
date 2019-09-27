@@ -14,10 +14,10 @@ public class EndangeredAnimal extends Animal {
     public static final String HEALTHY = "Healthy";
     public static final String ILL = "Ill";
     public static final String OKAY = "Okay";
-//
-//    public static final String NEWBORN = "Newborn";
-//    public static final String YOUNG = "Young";
-//    public static final String ADULT = "Adult";
+
+    public static final String NEWBORN = "Newborn";
+    public static final String YOUNG = "Young";
+    public static final String ADULT = "Adult";
 
     public EndangeredAnimal(String name, String health, String age) {
         this.name = name;
@@ -40,12 +40,12 @@ public class EndangeredAnimal extends Animal {
         try (Connection con = DB.sql2o.open()) {
             String sql = "INSERT INTO animals (name, health, age, endangered) VALUES (:name, :health, :age, :endangered)";
             con.createQuery(sql)
-                    .addParameter("health", this.health)
-                    .addParameter("age", this.age)
-                    .addParameter("id", this.id)
-                    .addParameter("endangered", this.endangered)
-                    .executeUpdate();
-        }
+//                    .addParameter("health", this.health)
+//                    .addParameter("age", this.age)
+//                    .addParameter("id", this.id)
+//                    .addParameter("endangered", this.endangered)
+//                    .executeUpdate();
+//        }
     }
 
     public static List<EndangeredAnimal> all() {
