@@ -2,7 +2,7 @@
 <h3>Add Sighting</h3>
 <form action="/sightings/new" method="post">
   <div class="form-group">
-    <label for="location">Location</label>
+{{!--     <label for="location">Location</label> --}}
     <select class="form-control" name="location">
       <option>Quadrant A</option>
       <option>Quadrant B</option>
@@ -10,10 +10,10 @@
       <option>Quadrant D</option>
     </select>
   </div>
-{{!--   <div class="form-group"> --}}
-{{!--     <label for="animal-names">Animal Names</label> --}}
-{{!--     <input type="text" name="animal-names" class="form-control" required> --}}
-{{!--   </div> --}}
-{{!--   <button type="submit" name="button" class="btn btn-primary">Add Sighting</button> --}}
-{{!-- </form> --}}
+  <div class="form-group">
+    <label for="animal-names">Animal Names</label>
+    <input type="text" name="animal-names" class="form-control" required>
+  </div>
+  <button type="submit" name="button" class="btn btn-primary">Add Sighting</button>
+</form>
 {{/partial}}
