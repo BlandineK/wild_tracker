@@ -76,13 +76,13 @@ public class App {
                     return new ModelAndView(model, layout);
                 }), new HandlebarsTemplateEngine();
 
-        get("/sightings", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
-            model.put("rangerName", request.session().attribute("rangerName"));
-            model.put("sightings", Sighting.allByDate());
-            model.put("template", "templates/sightings.hbs");
-            return new ModelAndView(model, layout);
-        }, new HandlebarsTemplateEngine());
+//        get("/sightings", (request, response) -> {
+//            Map<String, Object> model = new HashMap<String, Object>();
+//            model.put("rangerName", request.session().attribute("rangerName"));
+//            model.put("sightings", Sighting.allByDate());
+//            model.put("template", "templates/sightings.hbs");
+//            return new ModelAndView(model, layout);
+//        }, new HandlebarsTemplateEngine());
 
         get("/sightings/new", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
@@ -91,15 +91,15 @@ public class App {
             return new ModelAndView(model, layout);
         }, new HandlebarsTemplateEngine());
 
-//        post("/sightings/new", (request, response) -> {
-//            Map<String, Object> model = new HashMap<String, Object>();
-//            String rangerName = request.session().attribute("rangerName");
-//            String location = request.queryParams("location");
-//            Sighting sighting = new Sighting(location, rangerName);
-//            sighting.save();
-//            response.redirect("/sightings");
-//            return null;
-//        }, new HandlebarsTemplateEngine());
-//    }
-//}
+        post("/sightings/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            String rangerName = request.session().attribute("rangerName");
+            String location = request.queryParams("location");
+            Sighting sighting = new Sighting(location, rangerName);
+            sighting.save();
+            response.redirect("/sightings");
+            return null;
+        }, new HandlebarsTemplateEngine());
+    }
+}
 
