@@ -9,7 +9,7 @@ public class App {
 
     public static <RegularAnimal> void main(String[] args) {
         staticFileLocation("/public");
-//        String layout = "templates/layout.hbs";
+        String layout = "templates/layout.hbs";
         ProcessBuilder process = new ProcessBuilder();
         Integer port;
         if (process.environment().get("PORT") != null) {
