@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Map;
-//import java.util.HashMap;
+import java.util.HashMap;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import static spark.Spark.*;
@@ -9,7 +9,7 @@ public class App {
 
     public static <RegularAnimal> void main(String[] args) {
         staticFileLocation("/public");
-        String layout = "templates/layout.hbs";
+//        String layout = "templates/layout.hbs";
         ProcessBuilder process = new ProcessBuilder();
         Integer port;
         if (process.environment().get("PORT") != null) {
