@@ -4,7 +4,7 @@ import org.sql2o.*;
 import java.util.List;
 
 public class EndangeredAnimal extends Animal {
-//    private String health;
+    private String health;
     private String age;
 
     public boolean endangered;

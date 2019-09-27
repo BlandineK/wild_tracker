@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 import spark.ModelAndView;
@@ -7,7 +8,7 @@ import static spark.Spark.*;
 
 public class App {
 
-    public static <RegularAnimal> void main(String[] args) {
+    public static void main(String[] args) {
         staticFileLocation("/public");
         String layout = "templates/layout.hbs";
         ProcessBuilder process = new ProcessBuilder();
@@ -25,7 +26,7 @@ public class App {
             model.put("rangerName", request.session().attribute("rangerName"));
             model.put("animals", Animal.all());
             model.put("sightings", Sighting.all());
-            //      model.put("regular_animals", RegularAnimal.all());
+            model.put("regular_animals", RegularAnimal.all());
             model.put("endangeredAnimals", EndangeredAnimal.all());
             model.put("template", "template/index.hbs");
             return new ModelAndView(model, layout);
@@ -36,7 +37,6 @@ public class App {
             model.put("rangerName", request.session().attribute("rangerName"));
             model.put("animals", Animal.all());
             model.put("endangered_animals", EndangeredAnimal.all());
-//         model.put("regular_animals", RegularAnimal.all());
             model.put("template", "template/animals.hbs");
             return new ModelAndView(model, layout);
         }), new HandlebarsTemplateEngine();
@@ -65,8 +65,7 @@ public class App {
                 EndangeredAnimal endangeredAnimal = new EndangeredAnimal(name, health, age);
                 endangeredAnimal.save();
             } else {
-                RegularAnimal regularAnimal = new RegularAnimal(name);
-                regularAnimal.save();
+
             }
             response.redirect("/animals");
             return null;
@@ -74,7 +73,6 @@ public class App {
 
                 get("/animals/:id", (request, response) -> {
                     Map<String, Object> model = new HashMap<String, Object>();
-//                    RegularAnimal animal = RegularAnimal.find(Integer.parseInt(request.params("id")));
                     model.put("animal", animal);
                     model.put("rangerName", request.session().attribute("rangerName"));
                     model.put("template", "templates/animals.hbs");
@@ -98,14 +96,14 @@ public class App {
         }), new HandlebarsTemplateEngine();
 
         post("/sightings/new", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
-            String rangerName = request.session().attribute("rangerName");
-            String location = request.queryParams("location");
-            Sighting sighting = new Sighting(location, rangerName);
-            sighting.save();
-            response.redirect("/sightings");
-            return null;
-        }), new HandlebarsTemplateEngine();
-    }
+//            Map<String, Object> model = new HashMap<String, Object>();
+//            String rangerName = request.session().attribute("rangerName");
+//            String location = request.queryParams("location");
+//            Sighting sighting = new Sighting(location, rangerName);
+//            sighting.save();
+//            response.redirect("/sightings");
+//            return null;
+//        }), new HandlebarsTemplateEngine();
+//    }
 }
 
