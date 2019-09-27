@@ -1,0 +1,22 @@
+{{#partial "content"}}
+  <body>
+    <h2>Sightings</h2>
+     <div class="sightings">
+     #if($sightings.size() > 0)
+         #foreach($sighting in $sightings)
+         <div class="sighting">
+           <p><a href="/sightings/$sighting.getId()">Date: $sighting.getFormattedDate()</a></p>
+           <p>Ranger: $sighting.getRangerName()</p>
+           <p>Location: $sighting.getLocation()</p>
+           <p>$sighting.getRegularAnimals().size() animals</p>
+           <p>$sighting.getEndangeredAnimals().size() endangered animals</p>
+         </div>
+
+       <h4>No sightings available</h4>
+
+     </div>
+
+     </body>
+
+ {{/partial}}
+ {{>layout.hbs}}

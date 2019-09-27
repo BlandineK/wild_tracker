@@ -8,6 +8,10 @@ public class Animal {
     public  boolean endangered;
     public String Location;
 
+    public static Object all() {
+        return null;
+    }
+
     public int getId(){
 
         return id;

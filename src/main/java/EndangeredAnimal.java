@@ -6,6 +6,7 @@ import java.util.List;
 public class EndangeredAnimal extends Animal {
     private String health;
     private String age;
+
     public boolean endangered;
     public String name;
     public int id;
@@ -14,9 +15,9 @@ public class EndangeredAnimal extends Animal {
     public static final String ILL = "Ill";
     public static final String OKAY = "Okay";
 
-    public static final String AGE_NEWBORN = "newborn";
-    public static final String AGE_YOUNG = "young";
-    public static final String AGE_ADULT = "adult";
+    public static final String NEWBORN = "Newborn";
+    public static final String YOUNG = "Young";
+    public static final String ADULT = "Adult";
 
     public EndangeredAnimal(String name, String health, String age) {
         this.name = name;
