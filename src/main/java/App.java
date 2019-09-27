@@ -96,14 +96,14 @@ public class App {
         }), new HandlebarsTemplateEngine();
 
         post("/sightings/new", (request, response) -> {
-//            Map<String, Object> model = new HashMap<String, Object>();
-//            String rangerName = request.session().attribute("rangerName");
-//            String location = request.queryParams("location");
-//            Sighting sighting = new Sighting(location, rangerName);
-//            sighting.save();
-//            response.redirect("/sightings");
-//            return null;
-//        }), new HandlebarsTemplateEngine();
-//    }
+            Map<String, Object> model = new HashMap<String, Object>();
+            String rangerName = request.session().attribute("rangerName");
+            String location = request.queryParams("location");
+            Sighting sighting = new Sighting(location, rangerName);
+            sighting.save();
+            response.redirect("/sightings");
+            return null;
+        }), new HandlebarsTemplateEngine();
+    }
 }
 
